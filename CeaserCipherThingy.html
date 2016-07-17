@@ -114,13 +114,13 @@
 
   $(document).ready(function() {
     $('#convert').on('click', function() {
-      text = $('#textInput').val()
+      var text = $('#textInput').val()
 
-      ceasarValue = $('#CeasarValue').val()
+      var ceasarValue = $('#CeasarValue').val()
 
       for (var i = 0; i < text.length; i++) {
         if(text[i] == " " || text[i] == "\n"){continue}
-        l = (String.fromCharCode((text[i].charCodeAt() - ceasarValue)%255))
+        var l = (String.fromCharCode((text[i].charCodeAt() - ceasarValue)%255))
         text = text.substr(0, i) + l + text.substr(i + 1)
       }
       document.getElementById("output").innerHTML = text
